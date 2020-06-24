@@ -126,7 +126,7 @@ export default function CreateClass() {
               Create a Class
             </button>
             
-            <Modal show={show} onHide={handleClose} dialogClassName='modal-container'>
+            <Modal show={show} onHide={handleClose} dialogClassName='modal-container' size='lg'>
                 <Modal.Header closeButton >
                     <Modal.Title>Create a Class</Modal.Title>
                 </Modal.Header>
@@ -153,7 +153,7 @@ export default function CreateClass() {
                             <Form.Control onChange={changeHandelerString} name='classEquipment' value={formState.classEquipment} type="text" style={{width:'50%', height:'3.5rem'}}  />                    
                         </Form.Group> 
     
-                        <Form.Group controlId="classAddress" style={{paddingLeft:'5%'}}>
+                        <Form.Group controlId="classAddress" style={{paddingLeft:'5%' ,width:'25%'}}>
                             <label htmlFor='classAddress'>Class Address</label>
                                 <Form.Control onChange={changeHandelerBool} as='select' name='cities' value={formState.cities}>
                                     <option name='miami' value='miami'>Miami, FL</option>
