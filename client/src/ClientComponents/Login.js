@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
-
 import * as Yup from "yup";
 import { Link, Route } from "react-router-dom";
+import ClassList from "./ClassList";
 
-const Client = () => {
+const Login = () => {
   const [post, setPost] = useState();
   const [clientState, setClientState] = useState({
     id: Date.now(),
@@ -45,7 +45,7 @@ const Client = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axiosWithAuth()
-      .post("/clients/signin", clientState)
+      .post("/clients/login", clientState)
       .then((res) => {
         console.log(res.data);
         setPost(res.data);
@@ -96,8 +96,19 @@ const Client = () => {
           <button>Log in</button>
         </div>
       </form>
+      <div>
+        <Link to="/class-list">
+          <button className="home-button">Classes</button>
+          <ClassList />
+        </Link>
+      </div>
+      <div>
+        <Link to="/register">
+          <button className="home-button">Register</button>
+        </Link>
+      </div>
     </>
   );
 };
 
-export default Client;
+export default Login;
