@@ -6,10 +6,11 @@ import ClientLandingPage from "./ClientComponents/client_landing";
 import ClientSignUp from "./ClientComponents/signup";
 import axiosWithAuth from "./utils/axiosWithAuth";
 import { InitialContext } from "./contexts/InitialContext";
-import PrivateRoute from "./ClientSignUp/PrivateRoute";
+import PrivateRoute from "./ClientComponents/signup";
 import ClassList from "./ClientComponents/ClassList";
 import Register from "./ClientComponents/Register";
 import Login from "./ClientComponents/Login";
+import ClassSearch from "./ClientComponents/ClassSearch";
 
 function App() {
   // setting up state and functions for InitialContext
@@ -69,6 +70,9 @@ function App() {
               </Route>
               <Route exact path="class-list">
                 <ClassList />
+              </Route>
+              <Route exact path="/ClassSearch">
+                <ClassSearch />
               </Route>
             </Switch>
             <Link to="/">

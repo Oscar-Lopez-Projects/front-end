@@ -4,6 +4,39 @@ import styled from "styled-components";
 import * as Yup from "yup";
 import { Link, Route } from "react-router-dom";
 
+const Input = styled.input`
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1em;
+    border-radius: 10px;
+    &:hover {
+      background: black;
+      color: white;
+    }
+  `;
+  const Name = styled.div`
+    width: 100%;
+  `;
+
+  const Password = styled.div`
+    width: 100%;
+  `;
+  const LogIn = styled.div`
+    width: 100%;
+  `;
+  const InputName = styled.input`
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1em;
+    border-radius: 10px;
+  `;
+  const InputPassword = styled.input`
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1em;
+    border-radius: 10px;
+  `;
+
 const Client = () => {
   const [post, setPost] = useState();
   const [clientState, setClientState] = useState({
@@ -59,38 +92,7 @@ const Client = () => {
         console.log(err);
       });
   };
-  const Input = styled.input`
-    width: 100%;
-    padding: 0.5em;
-    font-size: 1em;
-    border-radius: 10px;
-    &:hover {
-      background: black;
-      color: white;
-    }
-  `;
-  const Name = styled.div`
-    width: 100%;
-  `;
-
-  const Password = styled.div`
-    width: 100%;
-  `;
-  const LogIn = styled.div`
-    width: 100%;
-  `;
-  const InputName = styled.input`
-    width: 100%;
-    padding: 0.5em;
-    font-size: 1em;
-    border-radius: 10px;
-  `;
-  const InputPassword = styled.input`
-    width: 100%;
-    padding: 0.5em;
-    font-size: 1em;
-    border-radius: 10px;
-  `;
+  
   return (
     <>
       <form onSubmit={handleSubmit}>
