@@ -11,6 +11,8 @@ import ClassList from "./ClientComponents/ClassList";
 import Register from "./ClientComponents/Register";
 import Login from "./ClientComponents/Login";
 import ClassSearch from "./ClientComponents/ClassSearch";
+import InstructorForm from './instructor/instructorForm';
+import InstructorDashboard from './instructor/instructorDashboard'
 
 function App() {
   // setting up state and functions for InitialContext
@@ -50,6 +52,7 @@ function App() {
         <div className="App">
           <InitialContext.Provider value={{ session, setSession }}>
             <Switch>
+              <Route exact path='/InstructorForm' render={()=><InstructorForm/>}/>
               <Route exact path="/">
                 <Link to="/ClientLandingPage">
                   <button>Client</button>
@@ -74,6 +77,7 @@ function App() {
               <Route exact path="/ClassSearch">
                 <ClassSearch />
               </Route>
+              <Route exact path='/InstructorDashboard' render={()=><InstructorDashboard/>}/>
             </Switch>
             <Link to="/">
               <button className="home-button">Home</button>
