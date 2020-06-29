@@ -17,6 +17,7 @@ import InstructorClasses from './instructor/InstructorClasses';
 import InstructorCreate from './instructor/InstructorCreate';
 import InstructorLogin from './instructor/InstructorLogin';
 
+
 function App() {
   // setting up state and functions for InitialContext
   const [session, setSession] = useState([]);
@@ -30,7 +31,7 @@ function App() {
     axiosWithAuth()
       .get("/clients")
       .then((res) => {
-        console.log(res.data);
+        console.log('this is client',res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -41,7 +42,7 @@ function App() {
     axiosWithAuth()
       .get("/classes")
       .then((res) => {
-        console.log(res.data);
+        console.log('Instructor classes',res.data);
         setSession(res.data);
       })
       .catch((err) => {
@@ -49,10 +50,14 @@ function App() {
       });
   }, []);
   // console.log(session);
-  return (
+  //Instructor data:
+ 
+ 
+ return (
     <>
       <Router>
         <div className="App">
+
           <InitialContext.Provider value={{ session, setSession }}>
             <Switch>
               <Route exact path='/InstructorForm' render={()=><InstructorForm/>}/>
@@ -71,8 +76,7 @@ function App() {
               <Route exact path="/InstructorSign">
                 <InstructorCreate />
               </Route>
-
-
+            
               <Route exact path="/ClientLandingPage">
                 <ClientLandingPage />
               </Route>
@@ -96,7 +100,8 @@ function App() {
             <Link to="/">
               <button className="home-button">Home</button>
             </Link>
-          </InitialContext.Provider>
+            </InitialContext.Provider>
+
         </div>
       </Router>
     </>
